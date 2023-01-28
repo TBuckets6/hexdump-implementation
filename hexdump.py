@@ -44,13 +44,17 @@ for i in range(len(dataListCopyHex)):
             print(' '.join(dataListCopyHex[i+8:i+16]),end='  ')
             l2 = ' '.join(dataListCopyHex[i+8:i+16])
             print('|' + ''.join(dataListCopy[i:i+16]) + '|')
+            #print('HI')
         else:
             prev = '{:08x}'.format(i)
             length = len('{:08x}'.format(i) + '  ' + ' '.join(dataListCopyHex[i:i+8]) + ' '.join(dataListCopyHex[i+8:i+16]))
             length2 = len(dataListCopyHex[i:i+16])
-            print('{:08x}'.format(i) + '  ' + ' '.join(dataListCopyHex[i:i+8]) + ' '.join(dataListCopyHex[i+8:i+16]),end='')
-            print('|'.rjust(61-length),end='')
+            print('{:08x}'.format(i) + '  ' + ' '.join(dataListCopyHex[i:i+8]) + '  ' + ' '.join(dataListCopyHex[i+8:i+16]),end='')
+            print('|'.rjust(59-length),end='')
             print(''.join(dataListCopy[i:i+16]) + '|')
+            #print(''.join(dataListCopyHex[i:8:i+16]),end='  ')
+            #print(''.join(dataListCopyHex)
+            #print('BYE')
     if len(dataListCopy) - 1 == i:
         print('{:08x}'.format(i + 1), end='')
         
