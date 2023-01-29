@@ -6,20 +6,11 @@ def main():
     data = openAndReadFile()
     dataLC = determinePrinatableAscii(data)
     printHexOutput(data, dataLC)
-    
-
-
-# fd = open(sys.argv[1], "rb")
-# data = fd.read()
-
 
 def openAndReadFile():
     fd = open(sys.argv[1], "rb")
     data = fd.read()
     return data
-
-
-#d = openAndReadFile()
 
 def determinePrinatableAscii(data):
     dataListCopy = []
