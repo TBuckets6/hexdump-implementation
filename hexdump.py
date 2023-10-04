@@ -1,20 +1,19 @@
 import sys
 
-
 # flake8: noqa
 
+#To run this program, enter into the command line: 'python hexdump.py filename'
+#For example, for hi.txt, type: 'python hexdump.py hi.txt'
 
 def main():
     data = openAndReadFile()
     dataLC = determinePrinatableAscii(data)
     printHexOutput(data, dataLC)
 
-
 def openAndReadFile():
     fd = open(sys.argv[1], "rb")
     data = fd.read()
     return data
-
 
 def determinePrinatableAscii(data):
     dataListCopy = []
@@ -27,7 +26,6 @@ def determinePrinatableAscii(data):
         else:
             dataListCopy.append(".")
     return dataListCopy
-
 
 def printHexOutput(d, dLC):
     d = list(d)
@@ -61,7 +59,6 @@ def printHexOutput(d, dLC):
                 print("".join(dLC[i: i + 16]) + "|")
         if len(dLC) - 1 == i:
             print("{:08x}".format(i + 1), end="")
-
 
 if __name__ == "__main__":
     main()
