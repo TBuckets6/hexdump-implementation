@@ -10,9 +10,11 @@ def main():
     dataLC = determinePrinatableAscii(data)
     printHexOutput(data, dataLC)
 
+
 def openAndReadFile():
     fd = open(sys.argv[1], "rb")
     data = fd.read()
+    #print(len(data))
     return data
 
 def determinePrinatableAscii(data):
